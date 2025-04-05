@@ -1,0 +1,14 @@
+def quicksort(arreg):
+    if len(arreg) <= 1:
+        return arreg 
+    else:
+        pivote = arreg[len(arreg)//2]
+        izq = [x for x in arreg if x < pivote]
+        centro = [x for x in arreg if x == pivote]
+        derech = [x for x in arreg if x > pivote]
+
+        return quicksort(izq) + centro + quicksort(derech)
+    
+arreg = [2,5,7,10,8,1]
+ordenado = quicksort(arreg)
+print(ordenado)
