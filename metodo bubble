@@ -1,0 +1,12 @@
+lista = [5,8,1,6,2,9]
+
+verificar = False
+while verificar == False:
+    verificar = True
+    for i in range(len(lista)-1):
+        if lista[i] > lista[i + 1]:
+            x = lista[i]
+            lista [i] = lista[i + 1]
+            lista[i + 1] = x
+            verificar = False
+print(lista) 
