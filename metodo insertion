@@ -1,0 +1,14 @@
+arreg = [2,5,7,10,8,1]
+def insertion_sort(arreg):
+    for i in range(1, len(arreg)):
+        for j in range(0 , len(arreg)):
+            if arreg[j] > arreg[i]:
+                x = arreg[j]
+                arreg[j] = arreg[i]
+                arreg[i] = x
+            j += 1
+        i += 1
+    print (f"La lista ordenada es {arreg}")
+
+
+insertion_sort(arreg)
