@@ -1,0 +1,32 @@
+import re
+
+def encontrar_numeros_telefono(texto):
+   
+    patron = r'''
+    (?:
+        (?:\+\d{1,3}[-\s]?)? 
+        (?:
+            \(?\d{2,4}\)?[-\s]?  
+        )?
+        \d{2,4}[-\s]?  
+        \d{2,4}[-\s]?  
+        \d{2,4}       
+    )
+    '''
+   
+    resultados = re.findall(patron, texto, re.VERBOSE)
+    return resultados
+
+
+if __name__ == "__main__":
+    texto = """
+    Puedes contactarme al 8180990810 o al (521) 888 0914.
+    Mi teléfono internacional es +81 611 222 333.
+    También puedo recibir mensajes en 8191234567.
+    """
+    
+    numeros_encontrados = encontrar_numeros_telefono(texto)
+    
+    print("Números de teléfono encontrados:")
+    for i, numero in enumerate(numeros_encontrados, 1):
+        print(f"{i}. {numero}")
